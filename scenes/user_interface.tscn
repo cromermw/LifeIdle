@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://5h63ep56w5tb"]
+[gd_scene load_steps=4 format=3 uid="uid://5h63ep56w5tb"]
 
 [ext_resource type="Script" path="res://scenes/user_interface.gd" id="1_jre43"]
 [ext_resource type="Script" path="res://scenes/main_view.gd" id="2_7iq47"]
+[ext_resource type="Script" path="res://scenes/attribute_upgrades_view.gd" id="3_pnytv"]
 
 [node name="UserInterface" type="Control"]
 layout_mode = 3
@@ -12,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jre43")
 
-[node name="MainView" type="Control" parent="." node_paths=PackedStringArray("reputationlabel", "reputationvaluelabel", "karmalabel", "karmavaluelabel", "fitnesslabel", "fitnessvaluelabel", "wealthlabel", "wealthvaluelabel", "educationlabel", "educationvaluelabel", "wisdomlabel", "wisdomvaluelabel", "livebutton", "socializebutton", "worshipbutton", "exercisebutton", "workbutton", "studybutton", "meditatebutton", "activitytimer")]
+[node name="MainView" type="Control" parent="." node_paths=PackedStringArray("user_interface", "reputationlabel", "reputationvaluelabel", "karmalabel", "karmavaluelabel", "fitnesslabel", "fitnessvaluelabel", "wealthlabel", "wealthvaluelabel", "educationlabel", "educationvaluelabel", "wisdomlabel", "wisdomvaluelabel", "livebutton", "socializebutton", "worshipbutton", "exercisebutton", "workbutton", "studybutton", "meditatebutton", "attributeupgradeslink", "activitytimer")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,6 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_7iq47")
+user_interface = NodePath("..")
 reputationlabel = NodePath("VBoxContainer/HBoxContainer/AttributesDisplay/ReputationLabel")
 reputationvaluelabel = NodePath("VBoxContainer/HBoxContainer/AttributesDisplay/ReputationValueLabel")
 karmalabel = NodePath("VBoxContainer/HBoxContainer/AttributesDisplay/KarmaLabel")
@@ -39,6 +41,7 @@ exercisebutton = NodePath("VBoxContainer/HBoxContainer/ActivitiesDisplay/Exercis
 workbutton = NodePath("VBoxContainer/HBoxContainer/ActivitiesDisplay/WorkButton")
 studybutton = NodePath("VBoxContainer/HBoxContainer/ActivitiesDisplay/StudyButton")
 meditatebutton = NodePath("VBoxContainer/HBoxContainer/ActivitiesDisplay/MeditateButton")
+attributeupgradeslink = NodePath("VBoxContainer/HBoxContainer/NavigationDisplay/AttributeUpgradesLink")
 activitytimer = NodePath("ActivityTimer")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainView"]
@@ -249,12 +252,59 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 10
 
+[node name="AttributeUpgradesLink" type="LinkButton" parent="MainView/VBoxContainer/HBoxContainer/NavigationDisplay"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -74.5
+offset_right = 74.5
+offset_bottom = 40.0
+grow_horizontal = 2
+text = "Attribute Upgrades"
+
 [node name="ResourcesDisplay" type="Control" parent="MainView/VBoxContainer"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 size_flags_vertical = 10
 
 [node name="ActivityTimer" type="Timer" parent="MainView"]
+
+[node name="AttributeUpgradesView" type="Control" parent="." node_paths=PackedStringArray("titlelabel", "mainviewlink", "user_interface")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_pnytv")
+titlelabel = NodePath("TitleLabel")
+mainviewlink = NodePath("MainViewLink")
+view = 1
+user_interface = NodePath("..")
+
+[node name="TitleLabel" type="Label" parent="AttributeUpgradesView"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -74.5
+offset_right = 74.5
+offset_bottom = 40.0
+grow_horizontal = 2
+text = "Attribute Upgrades"
+
+[node name="MainViewLink" type="LinkButton" parent="AttributeUpgradesView"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+text = "Main View"
 
 [connection signal="pressed" from="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/SocializeButton" to="MainView" method="_on_socialize_button_pressed"]
 [connection signal="pressed" from="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/MeditateButton" to="MainView" method="_on_meditate_button_pressed"]
@@ -263,4 +313,6 @@ size_flags_vertical = 10
 [connection signal="pressed" from="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/StudyButton" to="MainView" method="_on_study_button_pressed"]
 [connection signal="pressed" from="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/LiveButton" to="MainView" method="_on_live_button_pressed"]
 [connection signal="pressed" from="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/WorshipButton" to="MainView" method="_on_worship_button_pressed"]
+[connection signal="pressed" from="MainView/VBoxContainer/HBoxContainer/NavigationDisplay/AttributeUpgradesLink" to="." method="_on_attribute_upgrades_link_pressed"]
 [connection signal="timeout" from="MainView/ActivityTimer" to="MainView" method="_on_activity_timer_timeout"]
+[connection signal="pressed" from="AttributeUpgradesView/MainViewLink" to="." method="_on_main_view_link_pressed"]

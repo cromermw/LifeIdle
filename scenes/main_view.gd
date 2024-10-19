@@ -1,6 +1,9 @@
 class_name MainView
 extends Control
 
+@export var user_interface : UserInterface
+@export var view : UserInterface.Views
+
 @export var reputationlabel : Label
 @export var reputationvaluelabel : Label
 @export var karmalabel : Label
@@ -21,6 +24,7 @@ extends Control
 @export var workbutton : Button
 @export var studybutton : Button
 @export var meditatebutton : Button
+@export var attributeupgradeslink : LinkButton
 
 @export var activitytimer : Timer
 
@@ -36,6 +40,8 @@ var wisdom : float = 0
 
 func _ready() -> void:
 	update_attribute_value_label_text()	
+	user_interface.navigation_requested.connect(_on_navigation_request)
+	visible = true
 	
 func begin_activity() -> void:
 	activitytimer.wait_time = 1
@@ -164,3 +170,10 @@ func _on_meditate_button_pressed() -> void:
 		button.disabled = false
 	meditatebutton.disabled = true
 	begin_activity()
+	
+func _on_navigation_request(requested_view : UserInterface.Views) -> void:
+	if requested_view == view:
+		visible = true
+		return
+		
+	visible = false
