@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/user_interface.gd" id="1_jre43"]
 
-[node name="MainScreen" type="Control" node_paths=PackedStringArray("reputationlabel", "reputationvaluelabel", "karmalabel", "karmavaluelabel", "fitnesslabel", "fitnessvaluelabel", "wealthlabel", "wealthvaluelabel", "educationlabel", "educationvaluelabel", "wisdomlabel", "wisdomvaluelabel", "livebutton", "socializebutton", "praybutton", "exercisebutton", "workbutton", "studybutton", "meditatebutton", "activitytimer")]
+[node name="UserInterface" type="Control" node_paths=PackedStringArray("reputationlabel", "reputationvaluelabel", "karmalabel", "karmavaluelabel", "fitnesslabel", "fitnessvaluelabel", "wealthlabel", "wealthvaluelabel", "educationlabel", "educationvaluelabel", "wisdomlabel", "wisdomvaluelabel", "livebutton", "socializebutton", "praybutton", "exercisebutton", "workbutton", "studybutton", "meditatebutton", "activitytimer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,28 +10,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jre43")
-reputationlabel = NodePath("Screen/HBoxContainer/AttributesDisplay/ReputationLabel")
-reputationvaluelabel = NodePath("Screen/HBoxContainer/AttributesDisplay/ReputationValueLabel")
-karmalabel = NodePath("Screen/HBoxContainer/AttributesDisplay/KarmaLabel")
-karmavaluelabel = NodePath("Screen/HBoxContainer/AttributesDisplay/KarmaValueLabel")
-fitnesslabel = NodePath("Screen/HBoxContainer/AttributesDisplay/FitnessLabel")
-fitnessvaluelabel = NodePath("Screen/HBoxContainer/AttributesDisplay/FitnessValueLabel")
-wealthlabel = NodePath("Screen/HBoxContainer/AttributesDisplay/WealthLabel")
-wealthvaluelabel = NodePath("Screen/HBoxContainer/AttributesDisplay/WealthValueLabel")
-educationlabel = NodePath("Screen/HBoxContainer/AttributesDisplay/EducationLabel")
-educationvaluelabel = NodePath("Screen/HBoxContainer/AttributesDisplay/EducationValueLabel")
-wisdomlabel = NodePath("Screen/HBoxContainer/AttributesDisplay/WisdomLabel")
-wisdomvaluelabel = NodePath("Screen/HBoxContainer/AttributesDisplay/WisdomValueLabel")
-livebutton = NodePath("Screen/HBoxContainer/MainView/LiveButton")
-socializebutton = NodePath("Screen/HBoxContainer/MainView/SocializeButton")
-praybutton = NodePath("Screen/HBoxContainer/MainView/PrayButton")
-exercisebutton = NodePath("Screen/HBoxContainer/MainView/ExerciseButton")
-workbutton = NodePath("Screen/HBoxContainer/MainView/WorkButton")
-studybutton = NodePath("Screen/HBoxContainer/MainView/StudyButton")
-meditatebutton = NodePath("Screen/HBoxContainer/MainView/MeditateButton")
-activitytimer = NodePath("ActivityTimer")
+reputationlabel = NodePath("MainView/VBoxContainer/HBoxContainer/AttributesDisplay/ReputationLabel")
+reputationvaluelabel = NodePath("MainView/VBoxContainer/HBoxContainer/AttributesDisplay/ReputationValueLabel")
+karmalabel = NodePath("MainView/VBoxContainer/HBoxContainer/AttributesDisplay/KarmaLabel")
+karmavaluelabel = NodePath("MainView/VBoxContainer/HBoxContainer/AttributesDisplay/KarmaValueLabel")
+fitnesslabel = NodePath("MainView/VBoxContainer/HBoxContainer/AttributesDisplay/FitnessLabel")
+fitnessvaluelabel = NodePath("MainView/VBoxContainer/HBoxContainer/AttributesDisplay/FitnessValueLabel")
+wealthlabel = NodePath("MainView/VBoxContainer/HBoxContainer/AttributesDisplay/WealthLabel")
+wealthvaluelabel = NodePath("MainView/VBoxContainer/HBoxContainer/AttributesDisplay/WealthValueLabel")
+educationlabel = NodePath("MainView/VBoxContainer/HBoxContainer/AttributesDisplay/EducationLabel")
+educationvaluelabel = NodePath("MainView/VBoxContainer/HBoxContainer/AttributesDisplay/EducationValueLabel")
+wisdomlabel = NodePath("MainView/VBoxContainer/HBoxContainer/AttributesDisplay/WisdomLabel")
+wisdomvaluelabel = NodePath("MainView/VBoxContainer/HBoxContainer/AttributesDisplay/WisdomValueLabel")
+livebutton = NodePath("MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/LiveButton")
+socializebutton = NodePath("MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/SocializeButton")
+praybutton = NodePath("MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/PrayButton")
+exercisebutton = NodePath("MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/ExerciseButton")
+workbutton = NodePath("MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/WorkButton")
+studybutton = NodePath("MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/StudyButton")
+meditatebutton = NodePath("MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/MeditateButton")
+activitytimer = NodePath("MainView/ActivityTimer")
 
-[node name="Screen" type="VBoxContainer" parent="."]
+[node name="MainView" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,30 +39,38 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Screen"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainView"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainView/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 
-[node name="AttributesDisplay" type="Control" parent="Screen/HBoxContainer"]
+[node name="AttributesDisplay" type="Control" parent="MainView/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="ReputationLabel" type="Label" parent="Screen/HBoxContainer/AttributesDisplay"]
+[node name="ReputationLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
 custom_minimum_size = Vector2(100, 30)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Reputation: "
 
-[node name="ReputationValueLabel" type="Label" parent="Screen/HBoxContainer/AttributesDisplay"]
+[node name="ReputationValueLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
 layout_mode = 0
 offset_left = 100.0
 offset_right = 150.0
 offset_bottom = 30.0
 
-[node name="KarmaLabel" type="Label" parent="Screen/HBoxContainer/AttributesDisplay"]
+[node name="KarmaLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
 custom_minimum_size = Vector2(100, 30)
 layout_mode = 0
 offset_top = 30.0
@@ -70,7 +78,7 @@ offset_right = 100.0
 offset_bottom = 60.0
 text = "Karma: "
 
-[node name="KarmaValueLabel" type="Label" parent="Screen/HBoxContainer/AttributesDisplay"]
+[node name="KarmaValueLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
 custom_minimum_size = Vector2(50, 30)
 layout_mode = 0
 offset_left = 100.0
@@ -78,14 +86,14 @@ offset_top = 30.0
 offset_right = 150.0
 offset_bottom = 60.0
 
-[node name="FitnessLabel" type="Label" parent="Screen/HBoxContainer/AttributesDisplay"]
+[node name="FitnessLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
 layout_mode = 0
 offset_top = 60.0
 offset_right = 100.0
 offset_bottom = 90.0
 text = "Fitness: "
 
-[node name="FitnessValueLabel" type="Label" parent="Screen/HBoxContainer/AttributesDisplay"]
+[node name="FitnessValueLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
 custom_minimum_size = Vector2(50, 30)
 layout_mode = 0
 offset_left = 100.0
@@ -93,14 +101,14 @@ offset_top = 60.0
 offset_right = 150.0
 offset_bottom = 90.0
 
-[node name="WealthLabel" type="Label" parent="Screen/HBoxContainer/AttributesDisplay"]
+[node name="WealthLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
 layout_mode = 0
 offset_top = 90.0
 offset_right = 100.0
 offset_bottom = 120.0
 text = "Wealth: "
 
-[node name="WealthValueLabel" type="Label" parent="Screen/HBoxContainer/AttributesDisplay"]
+[node name="WealthValueLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
 custom_minimum_size = Vector2(50, 30)
 layout_mode = 0
 offset_left = 100.0
@@ -108,14 +116,14 @@ offset_top = 90.0
 offset_right = 150.0
 offset_bottom = 120.0
 
-[node name="EducationLabel" type="Label" parent="Screen/HBoxContainer/AttributesDisplay"]
+[node name="EducationLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
 layout_mode = 0
 offset_top = 120.0
 offset_right = 100.0
 offset_bottom = 150.0
 text = "Education: "
 
-[node name="EducationValueLabel" type="Label" parent="Screen/HBoxContainer/AttributesDisplay"]
+[node name="EducationValueLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
 custom_minimum_size = Vector2(50, 30)
 layout_mode = 0
 offset_left = 100.0
@@ -123,14 +131,14 @@ offset_top = 120.0
 offset_right = 150.0
 offset_bottom = 150.0
 
-[node name="WisdomLabel" type="Label" parent="Screen/HBoxContainer/AttributesDisplay"]
+[node name="WisdomLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
 layout_mode = 0
 offset_top = 150.0
 offset_right = 100.0
 offset_bottom = 180.0
 text = "Wisdom: "
 
-[node name="WisdomValueLabel" type="Label" parent="Screen/HBoxContainer/AttributesDisplay"]
+[node name="WisdomValueLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
 custom_minimum_size = Vector2(50, 30)
 layout_mode = 0
 offset_left = 100.0
@@ -138,12 +146,12 @@ offset_top = 150.0
 offset_right = 150.0
 offset_bottom = 180.0
 
-[node name="MainView" type="Control" parent="Screen/HBoxContainer"]
+[node name="ActivitiesDisplay" type="Control" parent="MainView/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 10.0
 
-[node name="SocializeButton" type="Button" parent="Screen/HBoxContainer/MainView"]
+[node name="SocializeButton" type="Button" parent="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay"]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 1
 anchors_preset = 5
@@ -156,7 +164,7 @@ offset_bottom = 120.0
 grow_horizontal = 2
 text = "Socialize"
 
-[node name="MeditateButton" type="Button" parent="Screen/HBoxContainer/MainView"]
+[node name="MeditateButton" type="Button" parent="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay"]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 1
 anchors_preset = 5
@@ -169,7 +177,7 @@ offset_bottom = 420.0
 grow_horizontal = 2
 text = "Meditate"
 
-[node name="ExerciseButton" type="Button" parent="Screen/HBoxContainer/MainView"]
+[node name="ExerciseButton" type="Button" parent="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay"]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 1
 anchors_preset = 5
@@ -182,7 +190,7 @@ offset_bottom = 240.0
 grow_horizontal = 2
 text = "Exercise"
 
-[node name="WorkButton" type="Button" parent="Screen/HBoxContainer/MainView"]
+[node name="WorkButton" type="Button" parent="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay"]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 1
 anchors_preset = 5
@@ -195,7 +203,7 @@ offset_bottom = 300.0
 grow_horizontal = 2
 text = "Work"
 
-[node name="StudyButton" type="Button" parent="Screen/HBoxContainer/MainView"]
+[node name="StudyButton" type="Button" parent="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay"]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 1
 anchors_preset = 5
@@ -208,7 +216,7 @@ offset_bottom = 360.0
 grow_horizontal = 2
 text = "Study"
 
-[node name="LiveButton" type="Button" parent="Screen/HBoxContainer/MainView"]
+[node name="LiveButton" type="Button" parent="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay"]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 1
 anchors_preset = 5
@@ -221,7 +229,7 @@ offset_bottom = 60.0
 grow_horizontal = 2
 text = "Live"
 
-[node name="PrayButton" type="Button" parent="Screen/HBoxContainer/MainView"]
+[node name="PrayButton" type="Button" parent="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay"]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 1
 anchors_preset = 5
@@ -234,23 +242,23 @@ offset_bottom = 180.0
 grow_horizontal = 2
 text = "Pray"
 
-[node name="NavigationDisplay" type="Control" parent="Screen/HBoxContainer"]
+[node name="NavigationDisplay" type="Control" parent="MainView/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 10
 
-[node name="ResourcesDisplay" type="Control" parent="Screen"]
+[node name="ResourcesDisplay" type="Control" parent="MainView/VBoxContainer"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 size_flags_vertical = 10
 
-[node name="ActivityTimer" type="Timer" parent="."]
+[node name="ActivityTimer" type="Timer" parent="MainView"]
 
-[connection signal="pressed" from="Screen/HBoxContainer/MainView/SocializeButton" to="." method="_on_socialize_button_pressed"]
-[connection signal="pressed" from="Screen/HBoxContainer/MainView/MeditateButton" to="." method="_on_meditate_button_pressed"]
-[connection signal="pressed" from="Screen/HBoxContainer/MainView/ExerciseButton" to="." method="_on_exercise_button_pressed"]
-[connection signal="pressed" from="Screen/HBoxContainer/MainView/WorkButton" to="." method="_on_work_button_pressed"]
-[connection signal="pressed" from="Screen/HBoxContainer/MainView/StudyButton" to="." method="_on_study_button_pressed"]
-[connection signal="pressed" from="Screen/HBoxContainer/MainView/LiveButton" to="." method="_on_live_button_pressed"]
-[connection signal="pressed" from="Screen/HBoxContainer/MainView/PrayButton" to="." method="_on_pray_button_pressed"]
-[connection signal="timeout" from="ActivityTimer" to="." method="_on_activity_timer_timeout"]
+[connection signal="pressed" from="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/SocializeButton" to="." method="_on_socialize_button_pressed"]
+[connection signal="pressed" from="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/MeditateButton" to="." method="_on_meditate_button_pressed"]
+[connection signal="pressed" from="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/ExerciseButton" to="." method="_on_exercise_button_pressed"]
+[connection signal="pressed" from="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/WorkButton" to="." method="_on_work_button_pressed"]
+[connection signal="pressed" from="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/StudyButton" to="." method="_on_study_button_pressed"]
+[connection signal="pressed" from="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/LiveButton" to="." method="_on_live_button_pressed"]
+[connection signal="pressed" from="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/PrayButton" to="." method="_on_pray_button_pressed"]
+[connection signal="timeout" from="MainView/ActivityTimer" to="." method="_on_activity_timer_timeout"]

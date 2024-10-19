@@ -1,4 +1,4 @@
-class_name MainScreen
+class_name UserInterface
 extends Control
 
 @export var reputationlabel : Label
