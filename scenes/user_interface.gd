@@ -17,6 +17,7 @@ extends Control
 @export var livebutton : Button
 @export var socializebutton : Button
 @export var praybutton : Button
+@export var exercisebutton : Button
 
 @export var activitytimer : Timer
 
@@ -39,15 +40,9 @@ func begin_activity(button) -> void:
 		socialize()
 	elif button == praybutton:
 		pray()
+	elif button == exercisebutton:
+		exercise()
 
-func socialize() -> void:
-	reputation+=0.2
-	update_attribute_value_label_text()	
-	
-func pray() -> void:
-	karma+=0.2
-	update_attribute_value_label_text()
-	
 func live() -> void:
 	var reward : int
 	
@@ -65,6 +60,18 @@ func live() -> void:
 	elif reward == 5:
 		wisdom+=0.1
 	update_attribute_value_label_text()	
+
+func socialize() -> void:
+	reputation+=0.2
+	update_attribute_value_label_text()	
+	
+func pray() -> void:
+	karma+=0.2
+	update_attribute_value_label_text()
+	
+func exercise() -> void:
+	fitness+=0.2
+	update_attribute_value_label_text()	
 	
 func update_attribute_value_label_text() -> void:
 	reputationvaluelabel.text = str(reputation)
@@ -75,9 +82,9 @@ func update_attribute_value_label_text() -> void:
 	wisdomvaluelabel.text = str(wisdom)
 	
 func get_activity_button() -> Button:
-	var button_array : Array = [livebutton, socializebutton, praybutton]
+	var buttonarray : Array = [livebutton, socializebutton, praybutton, exercisebutton]
 	var resultbutton : Button 
-	for button in button_array:
+	for button in buttonarray:
 		if button.disabled == true:
 			resultbutton = button
 	return resultbutton
@@ -91,24 +98,33 @@ func _on_activity_timer_timeout() -> void:
 		socialize()
 	elif activity == praybutton:
 		pray()
+	elif activity == exercisebutton:
+		exercise()
 
 func _on_live_button_pressed() -> void:
-	var button_array : Array = [livebutton, socializebutton, praybutton]
-	for button in button_array:
+	var buttonarray : Array = [livebutton, socializebutton, praybutton, exercisebutton]
+	for button in buttonarray:
 		button.disabled = false
 	livebutton.disabled = true
 	begin_activity(livebutton)
 
 func _on_socialize_button_pressed() -> void:
-	var button_array : Array = [livebutton, socializebutton, praybutton]
-	for button in button_array:
+	var buttonarray : Array = [livebutton, socializebutton, praybutton, exercisebutton]
+	for button in buttonarray:
 		button.disabled = false
 	socializebutton.disabled = true
 	begin_activity(socializebutton)
 
 func _on_pray_button_pressed() -> void:
-	var button_array : Array = [livebutton, socializebutton, praybutton]
-	for button in button_array:
+	var buttonarray : Array = [livebutton, socializebutton, praybutton, exercisebutton]
+	for button in buttonarray:
 		button.disabled = false
 	praybutton.disabled = true
 	begin_activity(praybutton)
+
+func _on_exercise_button_pressed() -> void:
+	var buttonarray : Array = [livebutton, socializebutton, praybutton, exercisebutton]
+	for button in buttonarray:
+		button.disabled = false
+	exercisebutton.disabled = true
+	begin_activity(exercisebutton)
