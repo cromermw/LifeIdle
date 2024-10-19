@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/user_interface.gd" id="1_jre43"]
 
-[node name="UserInterface" type="Control" node_paths=PackedStringArray("reputationlabel", "reputationvaluelabel", "karmalabel", "karmavaluelabel", "fitnesslabel", "fitnessvaluelabel", "wealthlabel", "wealthvaluelabel", "educationlabel", "educationvaluelabel", "wisdomlabel", "wisdomvaluelabel", "livebutton", "socializebutton", "praybutton", "exercisebutton", "workbutton", "studybutton", "meditatebutton", "activitytimer")]
+[node name="MainScreen" type="Control" node_paths=PackedStringArray("reputationlabel", "reputationvaluelabel", "karmalabel", "karmavaluelabel", "fitnesslabel", "fitnessvaluelabel", "wealthlabel", "wealthvaluelabel", "educationlabel", "educationvaluelabel", "wisdomlabel", "wisdomvaluelabel", "livebutton", "socializebutton", "praybutton", "exercisebutton", "workbutton", "studybutton", "meditatebutton", "activitytimer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
