@@ -24,6 +24,9 @@ extends Control
 
 @export var activitytimer : Timer
 
+var number_of_rewards : int = 1
+var reward_multiplier : float = 1
+
 var reputation : float = 0
 var karma : float = 0
 var fitness : float = 0
@@ -39,46 +42,49 @@ func begin_activity() -> void:
 	if activitytimer.is_stopped() == true:
 		activitytimer.start()
 
-func live() -> void:
+func reward_random(number_of_rewards, reward_multiplier) -> void:
 	var reward : int
-	
-	reward = randi_range(0, 5)
-	if reward == 0:
-		reputation+=0.1
-	elif reward == 1:
-		karma+=0.1
-	elif reward == 2:
-		fitness+=0.1
-	elif reward == 3:
-		wealth+=0.1
-	elif reward == 4:
-		education+=0.1
-	elif reward == 5:
-		wisdom+=0.1
+	for iteration in number_of_rewards:	
+		reward = randi_range(0, 5)
+		if reward == 0:
+			reputation+=0.1*reward_multiplier
+		elif reward == 1:
+			karma+=0.1*reward_multiplier
+		elif reward == 2:
+			fitness+=0.1*reward_multiplier
+		elif reward == 3:
+			wealth+=0.1*reward_multiplier
+		elif reward == 4:
+			education+=0.1*reward_multiplier
+		elif reward == 5:
+			wisdom+=0.1*reward_multiplier
+
+func live() -> void:
+	reward_random(number_of_rewards, reward_multiplier)
 	update_attribute_value_label_text()	
 
 func socialize() -> void:
-	reputation+=0.2
+	reputation+=0.3*reward_multiplier
 	update_attribute_value_label_text()	
 	
 func pray() -> void:
-	karma+=0.2
+	karma+=0.3*reward_multiplier
 	update_attribute_value_label_text()
 	
 func exercise() -> void:
-	fitness+=0.2
+	fitness+=0.3*reward_multiplier
 	update_attribute_value_label_text()	
 	
 func work() -> void:
-	wealth+=0.2
+	wealth+=0.3*reward_multiplier
 	update_attribute_value_label_text()	
 	
 func study() -> void:
-	education+=0.2
+	education+=0.3*reward_multiplier
 	update_attribute_value_label_text()
 	
 func meditate() -> void:
-	wisdom+=0.2
+	wisdom+=0.3*reward_multiplier
 	update_attribute_value_label_text()	
 
 func update_attribute_value_label_text() -> void:
