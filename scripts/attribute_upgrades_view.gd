@@ -1,3 +1,4 @@
+## The view where the player will buy their upgrades.
 class_name AttributeUpgradesView
 extends Control
 
@@ -6,6 +7,7 @@ extends Control
 @export var view : UserInterface.Views
 @export var user_interface : UserInterface
 
+## navigation
 func _ready() -> void:
 	user_interface.navigation_requested.connect(_on_navigation_request)
 	visible = false
@@ -16,6 +18,3 @@ func _on_navigation_request(requested_view : UserInterface.Views) -> void:
 		return
 		
 	visible = false
-
-func _on_main_view_link_pressed() -> void:
-	pass # Replace with function body.

@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://5h63ep56w5tb"]
+[gd_scene load_steps=10 format=3 uid="uid://5h63ep56w5tb"]
 
-[ext_resource type="Script" path="res://scenes/user_interface.gd" id="1_jre43"]
-[ext_resource type="Script" path="res://scenes/main_view.gd" id="2_7iq47"]
-[ext_resource type="Script" path="res://scenes/attribute_upgrades_view.gd" id="3_pnytv"]
+[ext_resource type="Script" path="res://scripts/user_interface.gd" id="1_jre43"]
+[ext_resource type="Script" path="res://scripts/main_view.gd" id="2_7iq47"]
+[ext_resource type="Script" path="res://scripts/label scripts/reputation_value_label.gd" id="3_0i0kp"]
+[ext_resource type="Script" path="res://scripts/attribute_upgrades_view.gd" id="3_pnytv"]
+[ext_resource type="Script" path="res://scripts/label scripts/karma_value_label.gd" id="4_4d6s2"]
+[ext_resource type="Script" path="res://scripts/label scripts/fitness_value_label.gd" id="5_opqbl"]
+[ext_resource type="Script" path="res://scripts/label scripts/wealth_value_label.gd" id="6_1paiv"]
+[ext_resource type="Script" path="res://scripts/label scripts/education_value_label.gd" id="7_xj3s7"]
+[ext_resource type="Script" path="res://scripts/label scripts/wisdom_value_label.gd" id="8_s5tau"]
 
 [node name="UserInterface" type="Control"]
 layout_mode = 3
@@ -74,6 +80,7 @@ layout_mode = 0
 offset_left = 100.0
 offset_right = 150.0
 offset_bottom = 30.0
+script = ExtResource("3_0i0kp")
 
 [node name="KarmaLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
 custom_minimum_size = Vector2(100, 30)
@@ -90,6 +97,7 @@ offset_left = 100.0
 offset_top = 30.0
 offset_right = 150.0
 offset_bottom = 60.0
+script = ExtResource("4_4d6s2")
 
 [node name="FitnessLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
 layout_mode = 0
@@ -105,6 +113,7 @@ offset_left = 100.0
 offset_top = 60.0
 offset_right = 150.0
 offset_bottom = 90.0
+script = ExtResource("5_opqbl")
 
 [node name="WealthLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
 layout_mode = 0
@@ -120,6 +129,7 @@ offset_left = 100.0
 offset_top = 90.0
 offset_right = 150.0
 offset_bottom = 120.0
+script = ExtResource("6_1paiv")
 
 [node name="EducationLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
 layout_mode = 0
@@ -135,6 +145,7 @@ offset_left = 100.0
 offset_top = 120.0
 offset_right = 150.0
 offset_bottom = 150.0
+script = ExtResource("7_xj3s7")
 
 [node name="WisdomLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
 layout_mode = 0
@@ -150,6 +161,7 @@ offset_left = 100.0
 offset_top = 150.0
 offset_right = 150.0
 offset_bottom = 180.0
+script = ExtResource("8_s5tau")
 
 [node name="ActivitiesDisplay" type="Control" parent="MainView/VBoxContainer/HBoxContainer"]
 layout_mode = 2
