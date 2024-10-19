@@ -60,32 +60,26 @@ func reward_random(number_of_rewards, reward_multiplier) -> void:
 			wisdom+=0.1*reward_multiplier
 
 func live() -> void:
+	number_of_rewards = 2
 	reward_random(number_of_rewards, reward_multiplier)
-	update_attribute_value_label_text()	
 
 func socialize() -> void:
 	reputation+=0.3*reward_multiplier
-	update_attribute_value_label_text()	
 	
 func pray() -> void:
 	karma+=0.3*reward_multiplier
-	update_attribute_value_label_text()
 	
 func exercise() -> void:
 	fitness+=0.3*reward_multiplier
-	update_attribute_value_label_text()	
 	
 func work() -> void:
 	wealth+=0.3*reward_multiplier
-	update_attribute_value_label_text()	
 	
 func study() -> void:
 	education+=0.3*reward_multiplier
-	update_attribute_value_label_text()
 	
 func meditate() -> void:
 	wisdom+=0.3*reward_multiplier
-	update_attribute_value_label_text()	
 
 func update_attribute_value_label_text() -> void:
 	reputationvaluelabel.text = str(reputation)
@@ -120,6 +114,7 @@ func _on_activity_timer_timeout() -> void:
 		study()
 	elif activity == meditatebutton:
 		meditate()
+	update_attribute_value_label_text()	
 
 func _on_live_button_pressed() -> void:
 	var buttonarray : Array = [livebutton, socializebutton, praybutton, exercisebutton, workbutton, studybutton, meditatebutton]
