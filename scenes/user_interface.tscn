@@ -1,0 +1,195 @@
+[gd_scene load_steps=2 format=3 uid="uid://5h63ep56w5tb"]
+
+[ext_resource type="Script" path="res://scenes/user_interface.gd" id="1_jre43"]
+
+[node name="UserInterface" type="Control" node_paths=PackedStringArray("reputationlabel", "reputationvaluelabel", "karmalabel", "karmavaluelabel", "fitnesslabel", "fitnessvaluelabel", "wealthlabel", "wealthvaluelabel", "educationlabel", "educationvaluelabel", "wisdomlabel", "wisdomvaluelabel", "livebutton", "socializebutton", "praybutton", "activitytimer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jre43")
+reputationlabel = NodePath("Screen/HBoxContainer/AttributesDisplay/ReputationLabel")
+reputationvaluelabel = NodePath("Screen/HBoxContainer/AttributesDisplay/ReputationValueLabel")
+karmalabel = NodePath("Screen/HBoxContainer/AttributesDisplay/KarmaLabel")
+karmavaluelabel = NodePath("Screen/HBoxContainer/AttributesDisplay/KarmaValueLabel")
+fitnesslabel = NodePath("Screen/HBoxContainer/AttributesDisplay/FitnessLabel")
+fitnessvaluelabel = NodePath("Screen/HBoxContainer/AttributesDisplay/FitnessValueLabel")
+wealthlabel = NodePath("Screen/HBoxContainer/AttributesDisplay/WealthLabel")
+wealthvaluelabel = NodePath("Screen/HBoxContainer/AttributesDisplay/WealthValueLabel")
+educationlabel = NodePath("Screen/HBoxContainer/AttributesDisplay/EducationLabel")
+educationvaluelabel = NodePath("Screen/HBoxContainer/AttributesDisplay/EducationValueLabel")
+wisdomlabel = NodePath("Screen/HBoxContainer/AttributesDisplay/WisdomLabel")
+wisdomvaluelabel = NodePath("Screen/HBoxContainer/AttributesDisplay/WisdomValueLabel")
+livebutton = NodePath("Screen/HBoxContainer/MainView/LiveButton")
+socializebutton = NodePath("Screen/HBoxContainer/MainView/SocializeButton")
+praybutton = NodePath("Screen/HBoxContainer/MainView/PrayButton")
+activitytimer = NodePath("ActivityTimer")
+
+[node name="Screen" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Screen"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="AttributesDisplay" type="Control" parent="Screen/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="ReputationLabel" type="Label" parent="Screen/HBoxContainer/AttributesDisplay"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Reputation: "
+
+[node name="ReputationValueLabel" type="Label" parent="Screen/HBoxContainer/AttributesDisplay"]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 150.0
+offset_bottom = 30.0
+
+[node name="KarmaLabel" type="Label" parent="Screen/HBoxContainer/AttributesDisplay"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 0
+offset_top = 30.0
+offset_right = 100.0
+offset_bottom = 60.0
+text = "Karma: "
+
+[node name="KarmaValueLabel" type="Label" parent="Screen/HBoxContainer/AttributesDisplay"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 30.0
+offset_right = 150.0
+offset_bottom = 60.0
+
+[node name="FitnessLabel" type="Label" parent="Screen/HBoxContainer/AttributesDisplay"]
+layout_mode = 0
+offset_top = 60.0
+offset_right = 100.0
+offset_bottom = 90.0
+text = "Fitness: "
+
+[node name="FitnessValueLabel" type="Label" parent="Screen/HBoxContainer/AttributesDisplay"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 60.0
+offset_right = 150.0
+offset_bottom = 90.0
+
+[node name="WealthLabel" type="Label" parent="Screen/HBoxContainer/AttributesDisplay"]
+layout_mode = 0
+offset_top = 90.0
+offset_right = 100.0
+offset_bottom = 120.0
+text = "Wealth: "
+
+[node name="WealthValueLabel" type="Label" parent="Screen/HBoxContainer/AttributesDisplay"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 90.0
+offset_right = 150.0
+offset_bottom = 120.0
+
+[node name="EducationLabel" type="Label" parent="Screen/HBoxContainer/AttributesDisplay"]
+layout_mode = 0
+offset_top = 120.0
+offset_right = 100.0
+offset_bottom = 150.0
+text = "Education: "
+
+[node name="EducationValueLabel" type="Label" parent="Screen/HBoxContainer/AttributesDisplay"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 120.0
+offset_right = 150.0
+offset_bottom = 150.0
+
+[node name="WisdomLabel" type="Label" parent="Screen/HBoxContainer/AttributesDisplay"]
+layout_mode = 0
+offset_top = 150.0
+offset_right = 100.0
+offset_bottom = 180.0
+text = "Wisdom: "
+
+[node name="WisdomValueLabel" type="Label" parent="Screen/HBoxContainer/AttributesDisplay"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 150.0
+offset_right = 150.0
+offset_bottom = 180.0
+
+[node name="MainView" type="Control" parent="Screen/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="LiveButton" type="Button" parent="Screen/HBoxContainer/MainView"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_right = 50.0
+offset_bottom = 40.0
+grow_horizontal = 2
+text = "Live"
+
+[node name="SocializeButton" type="Button" parent="Screen/HBoxContainer/MainView"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 60.0
+offset_right = 50.0
+offset_bottom = 100.0
+grow_horizontal = 2
+text = "Socialize"
+
+[node name="PrayButton" type="Button" parent="Screen/HBoxContainer/MainView"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 120.0
+offset_right = 50.0
+offset_bottom = 160.0
+grow_horizontal = 2
+text = "Pray"
+
+[node name="NavigationDisplay" type="Control" parent="Screen/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="ResourcesDisplay" type="Control" parent="Screen"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="ActivityTimer" type="Timer" parent="."]
+
+[connection signal="pressed" from="Screen/HBoxContainer/MainView/LiveButton" to="." method="_on_live_button_pressed"]
+[connection signal="pressed" from="Screen/HBoxContainer/MainView/SocializeButton" to="." method="_on_socialize_button_pressed"]
+[connection signal="pressed" from="Screen/HBoxContainer/MainView/PrayButton" to="." method="_on_pray_button_pressed"]
+[connection signal="timeout" from="ActivityTimer" to="." method="_on_activity_timer_timeout"]
