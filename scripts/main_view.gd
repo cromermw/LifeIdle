@@ -51,7 +51,7 @@ func reward_random(number_of_rewards, reward_multiplier) -> void:
 	for iteration in number_of_rewards:	
 		reward = randi_range(0, 5)
 		if reward == 0:
-			Game.ref.data.reputation+=0.1*reward_multiplier
+			HandlerReputation.ref.create_reputation(0.1*reward_multiplier)
 			print("Rewarding reputation. Reputation value: ", Game.ref.data.reputation)
 		elif reward == 1:
 			Game.ref.data.karma+=0.1*reward_multiplier
@@ -71,7 +71,8 @@ func live() -> void:
 
 ## activities that raise a specific attribute
 func socialize() -> void:
-	Game.ref.data.reputation+=0.3*reward_multiplier
+	##Game.ref.data.reputation+=0.3*reward_multiplier
+	HandlerReputation.ref.create_reputation(0.3*reward_multiplier)
 	print("Rewarding reputation. Reputation value: ", Game.ref.data.reputation)
 	
 func worship() -> void:
@@ -88,15 +89,6 @@ func study() -> void:
 	
 func meditate() -> void:
 	Game.ref.data.wisdom+=0.3*reward_multiplier
-
-## updates attribute value labels
-##func update_attribute_value_label_text() -> void:
-##	reputationvaluelabel.text = str(Game.ref.data.reputation)
-##	karmavaluelabel.text = str(Game.ref.data.karma)
-##	fitnessvaluelabel.text = str(Game.ref.data.fitness)
-##	wealthvaluelabel.text = str(Game.ref.data.wealth)
-##	educationvaluelabel.text = str(Game.ref.data.education)
-##	wisdomvaluelabel.text = str(Game.ref.data.wisdom)
 
 ## determine which activity the player is performing by checking to see which button is disabled
 func get_activity_button() -> Button:
@@ -183,7 +175,3 @@ func _on_navigation_request(requested_view : UserInterface.Views) -> void:
 		return
 		
 	visible = false
-
-## update labels each frame
-##func _process(_delta: float) -> void:
-##	update_attribute_value_label_text()	
