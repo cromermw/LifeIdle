@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bcf1b6wq2o5pu"]
+[gd_scene load_steps=8 format=3 uid="uid://bcf1b6wq2o5pu"]
 
+[ext_resource type="Script" path="res://scenes/attributes_display.gd" id="1_3qglu"]
 [ext_resource type="Script" path="res://scripts/label scripts/reputation_value_label.gd" id="1_80h52"]
 [ext_resource type="Script" path="res://scripts/label scripts/karma_value_label.gd" id="2_11stp"]
 [ext_resource type="Script" path="res://scripts/label scripts/fitness_value_label.gd" id="3_c3u8m"]
@@ -7,11 +8,24 @@
 [ext_resource type="Script" path="res://scripts/label scripts/education_value_label.gd" id="5_2yqlt"]
 [ext_resource type="Script" path="res://scripts/label scripts/wisdom_value_label.gd" id="6_swjiy"]
 
-[node name="AttributesDisplay" type="Control"]
+[node name="AttributesDisplay" type="Control" node_paths=PackedStringArray("reputationlabel", "reputationvaluelabel", "karmalabel", "karmavaluelabel", "fitnesslabel", "fitnessvaluelabel", "wealthlabel", "wealthvaluelabel", "educationlabel", "educationvaluelabel", "wisdomlabel", "wisdomvaluelabel")]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 0
+script = ExtResource("1_3qglu")
+reputationlabel = NodePath("ReputationLabel")
+reputationvaluelabel = NodePath("ReputationValueLabel")
+karmalabel = NodePath("KarmaLabel")
+karmavaluelabel = NodePath("KarmaValueLabel")
+fitnesslabel = NodePath("FitnessLabel")
+fitnessvaluelabel = NodePath("FitnessValueLabel")
+wealthlabel = NodePath("WealthLabel")
+wealthvaluelabel = NodePath("WealthValueLabel")
+educationlabel = NodePath("EducationLabel")
+educationvaluelabel = NodePath("EducationValueLabel")
+wisdomlabel = NodePath("WisdomLabel")
+wisdomvaluelabel = NodePath("WisdomValueLabel")
 
 [node name="ReputationLabel" type="Label" parent="."]
 custom_minimum_size = Vector2(100, 30)

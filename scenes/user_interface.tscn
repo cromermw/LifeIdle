@@ -14,21 +14,9 @@ grow_vertical = 2
 current_tab = 0
 script = ExtResource("1_jre43")
 
-[node name="MainView" type="Control" parent="." node_paths=PackedStringArray("reputationlabel", "reputationvaluelabel", "karmalabel", "karmavaluelabel", "fitnesslabel", "fitnessvaluelabel", "wealthlabel", "wealthvaluelabel", "educationlabel", "educationvaluelabel", "wisdomlabel", "wisdomvaluelabel", "livebutton", "socializebutton", "worshipbutton", "exercisebutton", "workbutton", "studybutton", "meditatebutton", "activitytimer")]
+[node name="MainView" type="Control" parent="." node_paths=PackedStringArray("livebutton", "socializebutton", "worshipbutton", "exercisebutton", "workbutton", "studybutton", "meditatebutton", "activitytimer")]
 layout_mode = 2
 script = ExtResource("2_7iq47")
-reputationlabel = NodePath("")
-reputationvaluelabel = NodePath("")
-karmalabel = NodePath("")
-karmavaluelabel = NodePath("")
-fitnesslabel = NodePath("")
-fitnessvaluelabel = NodePath("")
-wealthlabel = NodePath("")
-wealthvaluelabel = NodePath("")
-educationlabel = NodePath("")
-educationvaluelabel = NodePath("")
-wisdomlabel = NodePath("")
-wisdomvaluelabel = NodePath("")
 livebutton = NodePath("VBoxContainer/HBoxContainer/ActivitiesDisplay/LiveButton")
 socializebutton = NodePath("VBoxContainer/HBoxContainer/ActivitiesDisplay/SocializeButton")
 worshipbutton = NodePath("VBoxContainer/HBoxContainer/ActivitiesDisplay/WorshipButton")
