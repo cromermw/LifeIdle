@@ -1,9 +1,6 @@
 class_name MainView
 extends Control
 
-@export var user_interface : UserInterface
-@export var view : UserInterface.Views
-
 ## labels for the attributes and their values
 @export var reputationlabel : Label
 @export var reputationvaluelabel : Label
@@ -26,14 +23,9 @@ extends Control
 @export var workbutton : Button
 @export var studybutton : Button
 @export var meditatebutton : Button
-@export var attributeupgradeslink : LinkButton
 
 ## when this timer ends, the player gains some attributes depending on their activity
 @export var activitytimer : Timer
-
-func _ready() -> void:
-	user_interface.navigation_requested.connect(_on_navigation_request)
-	visible = true
 
 ## starts the timer if the timer is stopped	
 func begin_activity() -> void:
@@ -134,10 +126,3 @@ func _on_meditate_button_pressed() -> void:
 		button.disabled = false
 	meditatebutton.disabled = true
 	begin_activity()
-	
-func _on_navigation_request(requested_view : UserInterface.Views) -> void:
-	if requested_view == view:
-		visible = true
-		return
-		
-	visible = false

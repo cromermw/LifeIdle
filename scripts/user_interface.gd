@@ -1,17 +1,15 @@
 class_name UserInterface
-extends Control
+extends TabContainer
 
-## views
-enum Views {
-	MAIN_VIEW,
-	ATTRIBUTE_UPGRADES_VIEW,
-}
+signal navigation_requested(tab_index : int)
 
-signal navigation_requested(view : Views)
-
-##navigation links
-func _on_attribute_upgrades_link_pressed() -> void:
-	navigation_requested.emit(Views.ATTRIBUTE_UPGRADES_VIEW)
+func navigate_to(tab_index : int) -> Error:
+	if tab_index < 0: 
+		return FAILED
+	if tab_index > get_tab_count():
+		return FAILED
+		
+	current_tab = tab_index
+	navigation_requested.emit(tab_index)
 	
-func _on_main_view_link_pressed() -> void:
-	navigation_requested.emit(Views.MAIN_VIEW)
+	return OK

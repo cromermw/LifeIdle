@@ -1,0 +1,320 @@
+[gd_scene load_steps=10 format=3 uid="uid://5h63ep56w5tb"]
+
+[ext_resource type="Script" path="res://scripts/user_interface.gd" id="1_jre43"]
+[ext_resource type="Script" path="res://scripts/main_view.gd" id="2_7iq47"]
+[ext_resource type="Script" path="res://scripts/label scripts/reputation_value_label.gd" id="3_0i0kp"]
+[ext_resource type="Script" path="res://scripts/attribute_upgrades_view.gd" id="3_pnytv"]
+[ext_resource type="Script" path="res://scripts/label scripts/karma_value_label.gd" id="4_4d6s2"]
+[ext_resource type="Script" path="res://scripts/label scripts/fitness_value_label.gd" id="5_opqbl"]
+[ext_resource type="Script" path="res://scripts/label scripts/wealth_value_label.gd" id="6_1paiv"]
+[ext_resource type="Script" path="res://scripts/label scripts/education_value_label.gd" id="7_xj3s7"]
+[ext_resource type="Script" path="res://scripts/label scripts/wisdom_value_label.gd" id="8_s5tau"]
+
+[node name="UserInterface" type="TabContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+script = ExtResource("1_jre43")
+
+[node name="MainView" type="Control" parent="." node_paths=PackedStringArray("reputationlabel", "reputationvaluelabel", "karmalabel", "karmavaluelabel", "fitnesslabel", "fitnessvaluelabel", "wealthlabel", "wealthvaluelabel", "educationlabel", "educationvaluelabel", "wisdomlabel", "wisdomvaluelabel", "livebutton", "socializebutton", "worshipbutton", "exercisebutton", "workbutton", "studybutton", "meditatebutton", "attributeupgradeslink", "activitytimer")]
+layout_mode = 2
+script = ExtResource("2_7iq47")
+reputationlabel = NodePath("VBoxContainer/HBoxContainer/AttributesDisplay/ReputationLabel")
+reputationvaluelabel = NodePath("VBoxContainer/HBoxContainer/AttributesDisplay/ReputationValueLabel")
+karmalabel = NodePath("VBoxContainer/HBoxContainer/AttributesDisplay/KarmaLabel")
+karmavaluelabel = NodePath("VBoxContainer/HBoxContainer/AttributesDisplay/KarmaValueLabel")
+fitnesslabel = NodePath("VBoxContainer/HBoxContainer/AttributesDisplay/FitnessLabel")
+fitnessvaluelabel = NodePath("VBoxContainer/HBoxContainer/AttributesDisplay/FitnessValueLabel")
+wealthlabel = NodePath("VBoxContainer/HBoxContainer/AttributesDisplay/WealthLabel")
+wealthvaluelabel = NodePath("VBoxContainer/HBoxContainer/AttributesDisplay/WealthValueLabel")
+educationlabel = NodePath("VBoxContainer/HBoxContainer/AttributesDisplay/EducationLabel")
+educationvaluelabel = NodePath("VBoxContainer/HBoxContainer/AttributesDisplay/EducationValueLabel")
+wisdomlabel = NodePath("VBoxContainer/HBoxContainer/AttributesDisplay/WisdomLabel")
+wisdomvaluelabel = NodePath("VBoxContainer/HBoxContainer/AttributesDisplay/WisdomValueLabel")
+livebutton = NodePath("VBoxContainer/HBoxContainer/ActivitiesDisplay/LiveButton")
+socializebutton = NodePath("VBoxContainer/HBoxContainer/ActivitiesDisplay/SocializeButton")
+worshipbutton = NodePath("VBoxContainer/HBoxContainer/ActivitiesDisplay/WorshipButton")
+exercisebutton = NodePath("VBoxContainer/HBoxContainer/ActivitiesDisplay/ExerciseButton")
+workbutton = NodePath("VBoxContainer/HBoxContainer/ActivitiesDisplay/WorkButton")
+studybutton = NodePath("VBoxContainer/HBoxContainer/ActivitiesDisplay/StudyButton")
+meditatebutton = NodePath("VBoxContainer/HBoxContainer/ActivitiesDisplay/MeditateButton")
+attributeupgradeslink = NodePath("VBoxContainer/HBoxContainer/NavigationDisplay/AttributeUpgradesLink")
+activitytimer = NodePath("ActivityTimer")
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainView"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainView/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="AttributesDisplay" type="Control" parent="MainView/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="ReputationLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Reputation: "
+
+[node name="ReputationValueLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 150.0
+offset_bottom = 30.0
+script = ExtResource("3_0i0kp")
+
+[node name="KarmaLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 0
+offset_top = 30.0
+offset_right = 100.0
+offset_bottom = 60.0
+text = "Karma: "
+
+[node name="KarmaValueLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 30.0
+offset_right = 150.0
+offset_bottom = 60.0
+script = ExtResource("4_4d6s2")
+
+[node name="FitnessLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
+layout_mode = 0
+offset_top = 60.0
+offset_right = 100.0
+offset_bottom = 90.0
+text = "Fitness: "
+
+[node name="FitnessValueLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 60.0
+offset_right = 150.0
+offset_bottom = 90.0
+script = ExtResource("5_opqbl")
+
+[node name="WealthLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
+layout_mode = 0
+offset_top = 90.0
+offset_right = 100.0
+offset_bottom = 120.0
+text = "Wealth: "
+
+[node name="WealthValueLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 90.0
+offset_right = 150.0
+offset_bottom = 120.0
+script = ExtResource("6_1paiv")
+
+[node name="EducationLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
+layout_mode = 0
+offset_top = 120.0
+offset_right = 100.0
+offset_bottom = 150.0
+text = "Education: "
+
+[node name="EducationValueLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 120.0
+offset_right = 150.0
+offset_bottom = 150.0
+script = ExtResource("7_xj3s7")
+
+[node name="WisdomLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
+layout_mode = 0
+offset_top = 150.0
+offset_right = 100.0
+offset_bottom = 180.0
+text = "Wisdom: "
+
+[node name="WisdomValueLabel" type="Label" parent="MainView/VBoxContainer/HBoxContainer/AttributesDisplay"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 150.0
+offset_right = 150.0
+offset_bottom = 180.0
+script = ExtResource("8_s5tau")
+
+[node name="ActivitiesDisplay" type="Control" parent="MainView/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="SocializeButton" type="Button" parent="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 80.0
+offset_right = 50.0
+offset_bottom = 120.0
+grow_horizontal = 2
+text = "Socialize"
+
+[node name="MeditateButton" type="Button" parent="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 380.0
+offset_right = 50.0
+offset_bottom = 420.0
+grow_horizontal = 2
+text = "Meditate"
+
+[node name="ExerciseButton" type="Button" parent="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 200.0
+offset_right = 50.0
+offset_bottom = 240.0
+grow_horizontal = 2
+text = "Exercise"
+
+[node name="WorkButton" type="Button" parent="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 260.0
+offset_right = 50.0
+offset_bottom = 300.0
+grow_horizontal = 2
+text = "Work"
+
+[node name="StudyButton" type="Button" parent="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 320.0
+offset_right = 50.0
+offset_bottom = 360.0
+grow_horizontal = 2
+text = "Study"
+
+[node name="LiveButton" type="Button" parent="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 20.0
+offset_right = 50.0
+offset_bottom = 60.0
+grow_horizontal = 2
+text = "Live"
+
+[node name="WorshipButton" type="Button" parent="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 140.0
+offset_right = 50.0
+offset_bottom = 180.0
+grow_horizontal = 2
+text = "Worship"
+
+[node name="NavigationDisplay" type="Control" parent="MainView/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="AttributeUpgradesLink" type="LinkButton" parent="MainView/VBoxContainer/HBoxContainer/NavigationDisplay"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -74.5
+offset_right = 74.5
+offset_bottom = 40.0
+grow_horizontal = 2
+text = "Attribute Upgrades"
+
+[node name="ResourcesDisplay" type="Control" parent="MainView/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="ActivityTimer" type="Timer" parent="MainView"]
+
+[node name="AttributeUpgradesView" type="Control" parent="." node_paths=PackedStringArray("titlelabel", "mainviewlink")]
+visible = false
+layout_mode = 2
+script = ExtResource("3_pnytv")
+titlelabel = NodePath("TitleLabel")
+mainviewlink = NodePath("MainViewLink")
+metadata/_tab_index = 1
+
+[node name="TitleLabel" type="Label" parent="AttributeUpgradesView"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -74.5
+offset_right = 74.5
+offset_bottom = 40.0
+grow_horizontal = 2
+text = "Attribute Upgrades"
+
+[node name="MainViewLink" type="LinkButton" parent="AttributeUpgradesView"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+text = "Main View"
+
+[connection signal="pressed" from="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/SocializeButton" to="MainView" method="_on_socialize_button_pressed"]
+[connection signal="pressed" from="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/MeditateButton" to="MainView" method="_on_meditate_button_pressed"]
+[connection signal="pressed" from="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/ExerciseButton" to="MainView" method="_on_exercise_button_pressed"]
+[connection signal="pressed" from="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/WorkButton" to="MainView" method="_on_work_button_pressed"]
+[connection signal="pressed" from="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/StudyButton" to="MainView" method="_on_study_button_pressed"]
+[connection signal="pressed" from="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/LiveButton" to="MainView" method="_on_live_button_pressed"]
+[connection signal="pressed" from="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/WorshipButton" to="MainView" method="_on_worship_button_pressed"]
+[connection signal="pressed" from="MainView/VBoxContainer/HBoxContainer/NavigationDisplay/AttributeUpgradesLink" to="." method="_on_attribute_upgrades_link_pressed"]
+[connection signal="timeout" from="MainView/ActivityTimer" to="MainView" method="_on_activity_timer_timeout"]
+[connection signal="pressed" from="AttributeUpgradesView/MainViewLink" to="." method="_on_main_view_link_pressed"]

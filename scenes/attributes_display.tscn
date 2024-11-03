@@ -1,0 +1,109 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcf1b6wq2o5pu"]
+
+[ext_resource type="Script" path="res://scripts/label scripts/reputation_value_label.gd" id="1_80h52"]
+[ext_resource type="Script" path="res://scripts/label scripts/karma_value_label.gd" id="2_11stp"]
+[ext_resource type="Script" path="res://scripts/label scripts/fitness_value_label.gd" id="3_c3u8m"]
+[ext_resource type="Script" path="res://scripts/label scripts/wealth_value_label.gd" id="4_r4c3y"]
+[ext_resource type="Script" path="res://scripts/label scripts/education_value_label.gd" id="5_2yqlt"]
+[ext_resource type="Script" path="res://scripts/label scripts/wisdom_value_label.gd" id="6_swjiy"]
+
+[node name="AttributesDisplay" type="Control"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 0
+
+[node name="ReputationLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Reputation: "
+
+[node name="ReputationValueLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 150.0
+offset_bottom = 30.0
+script = ExtResource("1_80h52")
+
+[node name="KarmaLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 0
+offset_top = 30.0
+offset_right = 100.0
+offset_bottom = 60.0
+text = "Karma: "
+
+[node name="KarmaValueLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 30.0
+offset_right = 150.0
+offset_bottom = 60.0
+script = ExtResource("2_11stp")
+
+[node name="FitnessLabel" type="Label" parent="."]
+layout_mode = 0
+offset_top = 60.0
+offset_right = 100.0
+offset_bottom = 90.0
+text = "Fitness: "
+
+[node name="FitnessValueLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 60.0
+offset_right = 150.0
+offset_bottom = 90.0
+script = ExtResource("3_c3u8m")
+
+[node name="WealthLabel" type="Label" parent="."]
+layout_mode = 0
+offset_top = 90.0
+offset_right = 100.0
+offset_bottom = 120.0
+text = "Wealth: "
+
+[node name="WealthValueLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 90.0
+offset_right = 150.0
+offset_bottom = 120.0
+script = ExtResource("4_r4c3y")
+
+[node name="EducationLabel" type="Label" parent="."]
+layout_mode = 0
+offset_top = 120.0
+offset_right = 100.0
+offset_bottom = 150.0
+text = "Education: "
+
+[node name="EducationValueLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 120.0
+offset_right = 150.0
+offset_bottom = 150.0
+script = ExtResource("5_2yqlt")
+
+[node name="WisdomLabel" type="Label" parent="."]
+layout_mode = 0
+offset_top = 150.0
+offset_right = 100.0
+offset_bottom = 180.0
+text = "Wisdom: "
+
+[node name="WisdomValueLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 150.0
+offset_right = 150.0
+offset_bottom = 180.0
+script = ExtResource("6_swjiy")
