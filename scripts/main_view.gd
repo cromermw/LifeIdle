@@ -32,7 +32,7 @@ func live() -> void:
 	reward_random(2, 1)
 
 func perform_activity(activity) -> void:
-	HandlerResources.ref.create_attribute(activity, 0.3)
+	HandlerResources.ref.create_attribute(activity, 3)
 
 ## determine which activity the player is performing by checking to see which button is disabled
 func get_activity_button() -> Button:

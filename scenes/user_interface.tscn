@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://5h63ep56w5tb"]
+[gd_scene load_steps=6 format=3 uid="uid://5h63ep56w5tb"]
 
 [ext_resource type="Script" path="res://scripts/user_interface.gd" id="1_jre43"]
 [ext_resource type="Script" path="res://scripts/main_view.gd" id="2_7iq47"]
 [ext_resource type="PackedScene" uid="uid://bcf1b6wq2o5pu" path="res://scenes/attributes_display.tscn" id="3_5af7c"]
-[ext_resource type="Script" path="res://scripts/attribute_upgrades_view.gd" id="3_pnytv"]
+[ext_resource type="Script" path="res://scripts/titles_view.gd" id="3_pnytv"]
+[ext_resource type="Script" path="res://scripts/titles/acolyte_title.gd" id="5_xf77t"]
 
 [node name="UserInterface" type="TabContainer"]
 anchors_preset = 15
@@ -215,10 +216,13 @@ size_flags_vertical = 2
 theme_type_variation = &"HeaderMedium"
 text = "Titles"
 
-[node name="AcolyteTitle" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="AcolyteTitle" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" node_paths=PackedStringArray("AcolyteActivateButton")]
+visible = false
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_vertical = 2
+script = ExtResource("5_xf77t")
+AcolyteActivateButton = NodePath("MarginContainer/HBoxContainer/AcolyteActivateButton")
 
 [node name="MarginContainer" type="MarginContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/AcolyteTitle"]
 layout_mode = 1
@@ -260,7 +264,7 @@ text = "While active: +karma, +karma experience, +reputation
 Requirements: 10 karma, 20 reputation
 Cost: 10 reputation"
 
-[node name="AcolytePurchaseButton" type="Button" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/AcolyteTitle/MarginContainer/HBoxContainer"]
+[node name="AcolyteActivateButton" type="Button" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/AcolyteTitle/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 text = "Activate
@@ -270,6 +274,7 @@ text = "Activate
 layout_mode = 2
 
 [node name="RecruitTitle" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_vertical = 2
@@ -314,15 +319,16 @@ text = "While active: +fitness, +fitness experience, +reputation
 Requirements: 10 fitness, 20 reputation
 Cost: 10 reputation"
 
-[node name="RecruitPurchaseButton" type="Button" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RecruitTitle/MarginContainer/HBoxContainer"]
+[node name="RecruitActivateButton" type="Button" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RecruitTitle/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-text = "Purchase"
+text = "Activate"
 
 [node name="Panel" type="Panel" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RecruitTitle/MarginContainer"]
 layout_mode = 2
 
 [node name="VendorTitle" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_vertical = 2
@@ -367,15 +373,16 @@ text = "While active: +wealth, +wealth experience, +reputation
 Requirements: 10 wealth, 20 reputation
 Cost: 10 reputation"
 
-[node name="VendorPurchaseButton" type="Button" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VendorTitle/MarginContainer/HBoxContainer"]
+[node name="VendorActivateButton" type="Button" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VendorTitle/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-text = "Purchase"
+text = "Activate"
 
 [node name="Panel" type="Panel" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VendorTitle/MarginContainer"]
 layout_mode = 2
 
 [node name="DocentTitle" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_vertical = 2
@@ -420,15 +427,16 @@ text = "While active: +education, +education experience, +reputation
 Requirements: 10 education, 20 reputation
 Cost: 10 reputation"
 
-[node name="DocentPurchaseButton" type="Button" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DocentTitle/MarginContainer/HBoxContainer"]
+[node name="DocentActivateButton" type="Button" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DocentTitle/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-text = "Purchase"
+text = "Activate"
 
 [node name="Panel" type="Panel" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DocentTitle/MarginContainer"]
 layout_mode = 2
 
 [node name="PostulantTitle" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_vertical = 2
@@ -473,15 +481,15 @@ text = "While active: +wisdom, +wisdom experience, +reputation
 Requirements: 10 wisdom, 20 reputation
 Cost: 10 reputation"
 
-[node name="PostulantPurchaseButton" type="Button" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PostulantTitle/MarginContainer/HBoxContainer"]
+[node name="PostulantActivateButton" type="Button" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PostulantTitle/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-text = "Purchase"
+text = "Activate"
 
 [node name="Panel" type="Panel" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PostulantTitle/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="TitlesView/HBoxContainer"]
+[node name="RightPanel" type="VBoxContainer" parent="TitlesView/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
@@ -493,3 +501,4 @@ layout_mode = 2
 [connection signal="pressed" from="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/LiveButton" to="MainView" method="_on_live_button_pressed"]
 [connection signal="pressed" from="MainView/VBoxContainer/HBoxContainer/ActivitiesDisplay/WorshipButton" to="MainView" method="_on_worship_button_pressed"]
 [connection signal="timeout" from="MainView/ActivityTimer" to="MainView" method="_on_activity_timer_timeout"]
+[connection signal="pressed" from="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/AcolyteTitle/MarginContainer/HBoxContainer/AcolyteActivateButton" to="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/AcolyteTitle" method="_on_acolyte_activate_button_pressed"]

@@ -82,3 +82,6 @@ signal attribute_consumed(attribute : int, amount : float)
 
 func reputation() -> float:
 	return Game.ref.data.reputation
+
+func karma() -> float:
+	return Game.ref.data.karma

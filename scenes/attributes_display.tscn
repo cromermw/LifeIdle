@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bcf1b6wq2o5pu"]
 
-[ext_resource type="Script" path="res://scenes/attributes_display.gd" id="1_3qglu"]
+[ext_resource type="Script" path="res://scripts/attributes_display.gd" id="1_3qglu"]
 [ext_resource type="Script" path="res://scripts/label scripts/reputation_value_label.gd" id="1_80h52"]
 [ext_resource type="Script" path="res://scripts/label scripts/karma_value_label.gd" id="2_11stp"]
 [ext_resource type="Script" path="res://scripts/label scripts/fitness_value_label.gd" id="3_c3u8m"]
