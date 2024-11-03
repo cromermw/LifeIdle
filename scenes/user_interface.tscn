@@ -215,12 +215,12 @@ size_flags_vertical = 2
 theme_type_variation = &"HeaderMedium"
 text = "Titles"
 
-[node name="Title01" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="AcolyteTitle" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title01"]
+[node name="MarginContainer" type="MarginContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/AcolyteTitle"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -233,14 +233,14 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title01/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/AcolyteTitle/MarginContainer"]
 layout_mode = 2
 
-[node name="Title01Info" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title01/MarginContainer/HBoxContainer"]
+[node name="AcolyteInfo" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/AcolyteTitle/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title01/MarginContainer/HBoxContainer/Title01Info"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/AcolyteTitle/MarginContainer/HBoxContainer/AcolyteInfo"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -248,32 +248,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Title01InfoLabel" type="Label" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title01/MarginContainer/HBoxContainer/Title01Info/VBoxContainer"]
+[node name="AcolyteInfoLabel" type="Label" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/AcolyteTitle/MarginContainer/HBoxContainer/AcolyteInfo/VBoxContainer"]
 layout_mode = 2
 theme_type_variation = &"HeaderSmall"
-text = "Title01"
+text = "Acolyte"
 
-[node name="Title01InfoRichText" type="RichTextLabel" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title01/MarginContainer/HBoxContainer/Title01Info/VBoxContainer"]
+[node name="AcolyteInfoRichText" type="RichTextLabel" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/AcolyteTitle/MarginContainer/HBoxContainer/AcolyteInfo/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Description
-Effect
-Cost"
+text = "While active: +karma, +karma experience, +reputation
+Requirements: 10 karma, 20 reputation
+Cost: 10 reputation"
 
-[node name="Title01PurchaseButton" type="Button" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title01/MarginContainer/HBoxContainer"]
+[node name="AcolytePurchaseButton" type="Button" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/AcolyteTitle/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-text = "Purchase"
+text = "Activate
+"
 
-[node name="Panel" type="Panel" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title01/MarginContainer"]
+[node name="Panel" type="Panel" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/AcolyteTitle/MarginContainer"]
 layout_mode = 2
 
-[node name="Title02" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="RecruitTitle" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title02"]
+[node name="MarginContainer" type="MarginContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RecruitTitle"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -286,14 +287,14 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title02/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RecruitTitle/MarginContainer"]
 layout_mode = 2
 
-[node name="Title02Info" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title02/MarginContainer/HBoxContainer"]
+[node name="RecruitInfo" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RecruitTitle/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title02/MarginContainer/HBoxContainer/Title02Info"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RecruitTitle/MarginContainer/HBoxContainer/RecruitInfo"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -301,32 +302,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Title02InfoLabel" type="Label" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title02/MarginContainer/HBoxContainer/Title02Info/VBoxContainer"]
+[node name="RecruitInfoLabel" type="Label" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RecruitTitle/MarginContainer/HBoxContainer/RecruitInfo/VBoxContainer"]
 layout_mode = 2
 theme_type_variation = &"HeaderSmall"
-text = "Title02"
+text = "Recruit"
 
-[node name="Title02InfoRichText" type="RichTextLabel" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title02/MarginContainer/HBoxContainer/Title02Info/VBoxContainer"]
+[node name="RecruitInfoRichText" type="RichTextLabel" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RecruitTitle/MarginContainer/HBoxContainer/RecruitInfo/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Description
-Effect
-Cost"
+text = "While active: +fitness, +fitness experience, +reputation
+Requirements: 10 fitness, 20 reputation
+Cost: 10 reputation"
 
-[node name="Title02PurchaseButton" type="Button" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title02/MarginContainer/HBoxContainer"]
+[node name="RecruitPurchaseButton" type="Button" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RecruitTitle/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 text = "Purchase"
 
-[node name="Panel" type="Panel" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title02/MarginContainer"]
+[node name="Panel" type="Panel" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RecruitTitle/MarginContainer"]
 layout_mode = 2
 
-[node name="Title03" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="VendorTitle" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title03"]
+[node name="MarginContainer" type="MarginContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VendorTitle"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -339,14 +340,14 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title03/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VendorTitle/MarginContainer"]
 layout_mode = 2
 
-[node name="Title03Info" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title03/MarginContainer/HBoxContainer"]
+[node name="VendorInfo" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VendorTitle/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title03/MarginContainer/HBoxContainer/Title03Info"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VendorTitle/MarginContainer/HBoxContainer/VendorInfo"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -354,32 +355,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Title03InfoLabel" type="Label" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title03/MarginContainer/HBoxContainer/Title03Info/VBoxContainer"]
+[node name="VendorInfoLabel" type="Label" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VendorTitle/MarginContainer/HBoxContainer/VendorInfo/VBoxContainer"]
 layout_mode = 2
 theme_type_variation = &"HeaderSmall"
-text = "Title03"
+text = "Vendor"
 
-[node name="Title03InfoRichText" type="RichTextLabel" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title03/MarginContainer/HBoxContainer/Title03Info/VBoxContainer"]
+[node name="VendorInfoRichText" type="RichTextLabel" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VendorTitle/MarginContainer/HBoxContainer/VendorInfo/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Description
-Effect
-Cost"
+text = "While active: +wealth, +wealth experience, +reputation
+Requirements: 10 wealth, 20 reputation
+Cost: 10 reputation"
 
-[node name="Title03PurchaseButton" type="Button" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title03/MarginContainer/HBoxContainer"]
+[node name="VendorPurchaseButton" type="Button" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VendorTitle/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 text = "Purchase"
 
-[node name="Panel" type="Panel" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title03/MarginContainer"]
+[node name="Panel" type="Panel" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VendorTitle/MarginContainer"]
 layout_mode = 2
 
-[node name="Title04" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="DocentTitle" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title04"]
+[node name="MarginContainer" type="MarginContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DocentTitle"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -392,14 +393,14 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title04/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DocentTitle/MarginContainer"]
 layout_mode = 2
 
-[node name="Title04Info" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title04/MarginContainer/HBoxContainer"]
+[node name="DocentInfo" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DocentTitle/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title04/MarginContainer/HBoxContainer/Title04Info"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DocentTitle/MarginContainer/HBoxContainer/DocentInfo"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -407,32 +408,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Title04InfoLabel" type="Label" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title04/MarginContainer/HBoxContainer/Title04Info/VBoxContainer"]
+[node name="DocentInfoLabel" type="Label" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DocentTitle/MarginContainer/HBoxContainer/DocentInfo/VBoxContainer"]
 layout_mode = 2
 theme_type_variation = &"HeaderSmall"
-text = "Title04"
+text = "Docent"
 
-[node name="Title04InfoRichText" type="RichTextLabel" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title04/MarginContainer/HBoxContainer/Title04Info/VBoxContainer"]
+[node name="DocentInfoRichText" type="RichTextLabel" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DocentTitle/MarginContainer/HBoxContainer/DocentInfo/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Description
-Effect
-Cost"
+text = "While active: +education, +education experience, +reputation
+Requirements: 10 education, 20 reputation
+Cost: 10 reputation"
 
-[node name="Title04PurchaseButton" type="Button" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title04/MarginContainer/HBoxContainer"]
+[node name="DocentPurchaseButton" type="Button" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DocentTitle/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 text = "Purchase"
 
-[node name="Panel" type="Panel" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title04/MarginContainer"]
+[node name="Panel" type="Panel" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DocentTitle/MarginContainer"]
 layout_mode = 2
 
-[node name="Title05" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="PostulantTitle" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title05"]
+[node name="MarginContainer" type="MarginContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PostulantTitle"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -445,14 +446,14 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title05/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PostulantTitle/MarginContainer"]
 layout_mode = 2
 
-[node name="Title05Info" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title05/MarginContainer/HBoxContainer"]
+[node name="PostulantInfo" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PostulantTitle/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title05/MarginContainer/HBoxContainer/Title05Info"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PostulantTitle/MarginContainer/HBoxContainer/PostulantInfo"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -460,24 +461,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Title05InfoLabel" type="Label" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title05/MarginContainer/HBoxContainer/Title05Info/VBoxContainer"]
+[node name="PostulantInfoLabel" type="Label" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PostulantTitle/MarginContainer/HBoxContainer/PostulantInfo/VBoxContainer"]
 layout_mode = 2
 theme_type_variation = &"HeaderSmall"
-text = "Title05"
+text = "Postulant"
 
-[node name="Title05InfoRichText" type="RichTextLabel" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title05/MarginContainer/HBoxContainer/Title05Info/VBoxContainer"]
+[node name="PostulantInfoRichText" type="RichTextLabel" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PostulantTitle/MarginContainer/HBoxContainer/PostulantInfo/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Description
-Effect
-Cost"
+text = "While active: +wisdom, +wisdom experience, +reputation
+Requirements: 10 wisdom, 20 reputation
+Cost: 10 reputation"
 
-[node name="Title05PurchaseButton" type="Button" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title05/MarginContainer/HBoxContainer"]
+[node name="PostulantPurchaseButton" type="Button" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PostulantTitle/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 text = "Purchase"
 
-[node name="Panel" type="Panel" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Title05/MarginContainer"]
+[node name="Panel" type="Panel" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PostulantTitle/MarginContainer"]
 layout_mode = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="TitlesView/HBoxContainer"]
