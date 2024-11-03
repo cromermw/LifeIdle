@@ -31,10 +31,6 @@ extends Control
 ## when this timer ends, the player gains some attributes depending on their activity
 @export var activitytimer : Timer
 
-## value multipliers to allow the player to scale
-var number_of_rewards : int = 1
-var reward_multiplier : float = 1
-
 func _ready() -> void:
 	user_interface.navigation_requested.connect(_on_navigation_request)
 	visible = true
@@ -48,47 +44,17 @@ func begin_activity() -> void:
 ## rewards random attributes for player activities that don't increase a specific attribute
 func reward_random(number_of_rewards, reward_multiplier) -> void:
 	var reward : int
+	
 	for iteration in number_of_rewards:	
 		reward = randi_range(0, 5)
-		if reward == 0:
-			HandlerReputation.ref.create_reputation(0.1*reward_multiplier)
-			print("Rewarding reputation. Reputation value: ", Game.ref.data.reputation)
-		elif reward == 1:
-			Game.ref.data.karma+=0.1*reward_multiplier
-		elif reward == 2:
-			Game.ref.data.fitness+=0.1*reward_multiplier
-		elif reward == 3:
-			Game.ref.data.wealth+=0.1*reward_multiplier
-		elif reward == 4:
-			Game.ref.data.education+=0.1*reward_multiplier
-		elif reward == 5:
-			Game.ref.data.wisdom+=0.1*reward_multiplier
+		HandlerResources.ref.create_attribute(reward, 0.1)
 
 ## generic activity that gives random increases
 func live() -> void:
-	number_of_rewards = 2
-	reward_random(number_of_rewards, reward_multiplier)
+	reward_random(2, 1)
 
-## activities that raise a specific attribute
-func socialize() -> void:
-	##Game.ref.data.reputation+=0.3*reward_multiplier
-	HandlerReputation.ref.create_reputation(0.3*reward_multiplier)
-	print("Rewarding reputation. Reputation value: ", Game.ref.data.reputation)
-	
-func worship() -> void:
-	Game.ref.data.karma+=0.3*reward_multiplier
-	
-func exercise() -> void:
-	Game.ref.data.fitness+=0.3*reward_multiplier
-	
-func work() -> void:
-	Game.ref.data.wealth+=0.3*reward_multiplier
-	
-func study() -> void:
-	Game.ref.data.education+=0.3*reward_multiplier
-	
-func meditate() -> void:
-	Game.ref.data.wisdom+=0.3*reward_multiplier
+func perform_activity(activity) -> void:
+	HandlerResources.ref.create_attribute(activity, 0.3)
 
 ## determine which activity the player is performing by checking to see which button is disabled
 func get_activity_button() -> Button:
@@ -106,17 +72,17 @@ func _on_activity_timer_timeout() -> void:
 	if activity == livebutton:
 		live()
 	elif activity == socializebutton:
-		socialize()
+		perform_activity(0)
 	elif activity == worshipbutton:
-		worship()
+		perform_activity(1)
 	elif activity == exercisebutton:
-		exercise()
+		perform_activity(2)
 	elif activity == workbutton:
-		work()
+		perform_activity(3)
 	elif activity == studybutton:
-		study()
+		perform_activity(4)
 	elif activity == meditatebutton:
-		meditate()
+		perform_activity(5)
 
 func _on_live_button_pressed() -> void:
 	var buttonarray : Array = [livebutton, socializebutton, worshipbutton, exercisebutton, workbutton, studybutton, meditatebutton]
