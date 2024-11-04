@@ -23,3 +23,6 @@ extends Resource
 @export var wealth_experience : int = 0
 @export var education_experience : int = 0
 @export var wisdom_experience : int = 0
+
+##multipliers and other upgrades
+@export var cost_multiplier : float = 1
