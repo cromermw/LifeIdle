@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://5h63ep56w5tb"]
+[gd_scene load_steps=7 format=3 uid="uid://5h63ep56w5tb"]
 
 [ext_resource type="Script" path="res://scripts/user_interface.gd" id="1_jre43"]
 [ext_resource type="Script" path="res://scripts/main_view.gd" id="2_7iq47"]
@@ -6,9 +6,6 @@
 [ext_resource type="Script" path="res://scripts/titles_view.gd" id="3_pnytv"]
 [ext_resource type="Script" path="res://scripts/titles/acolyte_title.gd" id="5_xf77t"]
 [ext_resource type="Script" path="res://scripts/titles/recruit_title.gd" id="6_v3bkd"]
-[ext_resource type="Script" path="res://scripts/titles/vendor_title.gd" id="7_mu7wd"]
-[ext_resource type="Script" path="res://scripts/titles/docent_title.gd" id="8_drhyc"]
-[ext_resource type="Script" path="res://scripts/titles/postulant_title.gd" id="9_r3gm6"]
 
 [node name="UserInterface" type="TabContainer"]
 anchors_preset = 15
@@ -202,6 +199,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TestButton" type="Button" parent="TitlesView/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "TestButton
+"
+
 [node name="ScrollContainer" type="ScrollContainer" parent="TitlesView/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -339,7 +344,6 @@ text = "Activate"
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_vertical = 2
-script = ExtResource("7_mu7wd")
 
 [node name="MarginContainer" type="MarginContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VendorTitle"]
 layout_mode = 1
@@ -393,7 +397,6 @@ text = "Activate"
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_vertical = 2
-script = ExtResource("8_drhyc")
 
 [node name="MarginContainer" type="MarginContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DocentTitle"]
 layout_mode = 1
@@ -447,7 +450,6 @@ text = "Activate"
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_vertical = 2
-script = ExtResource("9_r3gm6")
 
 [node name="MarginContainer" type="MarginContainer" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PostulantTitle"]
 layout_mode = 1

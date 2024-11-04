@@ -1,12 +1,11 @@
-class_name AcolyteTitle
+class_name VendorTitle
 extends Control
 
-##Keys: 0 = reputation, 1 = karma, 2 = fitness, 3 = wealth, 4 = education, 5 = wisdom
 var base_reputation_cost : float = 10
 var cost_multiplier : float = 1
 
 var base_reputation_requirement : float = 2*base_reputation_cost
-var base_karma_requirement : float = 10
+var base_wealth_requirement : float = 10
 
 func cost() -> float:
 	return base_reputation_cost * cost_multiplier
@@ -14,11 +13,11 @@ func cost() -> float:
 func reputation_requirement() -> float:
 	return base_reputation_requirement * cost_multiplier
 
-func karma_requirement() -> float:
-	return base_karma_requirement * cost_multiplier
+func wealth_requirement() -> float:
+	return base_wealth_requirement * cost_multiplier
 
 func meets_requirements() -> void:
-	if HandlerResources.ref.reputation() <  reputation_requirement() or HandlerResources.ref.karma() < karma_requirement():
+	if HandlerResources.ref.reputation() <  reputation_requirement() or HandlerResources.ref.wealth() < wealth_requirement():
 		visible = false
 	else:
 		visible = true

@@ -39,7 +39,14 @@ func perform_activity(activity) -> void:
 
 ## determine which activity the player is performing by checking to see which button is disabled
 func get_activity_button() -> Button:
-	var buttonarray : Array = [livebutton, socializebutton, worshipbutton, exercisebutton, workbutton, studybutton, meditatebutton]
+	var buttonarray : Array = [
+	livebutton, 
+	socializebutton, 
+	worshipbutton, 
+	exercisebutton, 
+	workbutton, 
+	studybutton, 
+	meditatebutton]
 	var resultbutton : Button 
 	for button in buttonarray:
 		if button.disabled == true:
@@ -66,52 +73,52 @@ func _on_activity_timer_timeout() -> void:
 		perform_activity(5)
 
 func _on_live_button_pressed() -> void:
-	var buttonarray : Array = [livebutton, socializebutton, worshipbutton, exercisebutton, workbutton, studybutton, meditatebutton]
+	var button_array : Array = [livebutton, socializebutton, worshipbutton, exercisebutton, workbutton, studybutton, meditatebutton]
 	## iterate through each button, enabling them all
-	for button in buttonarray:
+	for button in button_array:
 		button.disabled = false
 	## disable the button of the current activity
 	livebutton.disabled = true
 	begin_activity()
 
 func _on_socialize_button_pressed() -> void:
-	var buttonarray : Array = [livebutton, socializebutton, worshipbutton, exercisebutton, workbutton, studybutton, meditatebutton]
-	for button in buttonarray:
+	var button_array : Array = [livebutton, socializebutton, worshipbutton, exercisebutton, workbutton, studybutton, meditatebutton]
+	for button in button_array:
 		button.disabled = false
 	socializebutton.disabled = true
 	begin_activity()
 
 func _on_worship_button_pressed() -> void:
-	var buttonarray : Array = [livebutton, socializebutton, worshipbutton, exercisebutton, workbutton, studybutton, meditatebutton]
-	for button in buttonarray:
+	var button_array : Array = [livebutton, socializebutton, worshipbutton, exercisebutton, workbutton, studybutton, meditatebutton]
+	for button in button_array:
 		button.disabled = false
 	worshipbutton.disabled = true
 	begin_activity()
 
 func _on_exercise_button_pressed() -> void:
-	var buttonarray : Array = [livebutton, socializebutton, worshipbutton, exercisebutton, workbutton, studybutton, meditatebutton]
-	for button in buttonarray:
+	var button_array : Array = [livebutton, socializebutton, worshipbutton, exercisebutton, workbutton, studybutton, meditatebutton]
+	for button in button_array:
 		button.disabled = false
 	exercisebutton.disabled = true
 	begin_activity()
 
 func _on_work_button_pressed() -> void:
-	var buttonarray : Array = [livebutton, socializebutton, worshipbutton, exercisebutton, workbutton, studybutton, meditatebutton]
-	for button in buttonarray:
+	var button_array : Array = [livebutton, socializebutton, worshipbutton, exercisebutton, workbutton, studybutton, meditatebutton]
+	for button in button_array:
 		button.disabled = false
 	workbutton.disabled = true
 	begin_activity()
 
 func _on_study_button_pressed() -> void:
-	var buttonarray : Array = [livebutton, socializebutton, worshipbutton, exercisebutton, workbutton, studybutton, meditatebutton]
-	for button in buttonarray:
+	var button_array : Array = [livebutton, socializebutton, worshipbutton, exercisebutton, workbutton, studybutton, meditatebutton]
+	for button in button_array:
 		button.disabled = false
 	studybutton.disabled = true
 	begin_activity()
 
 func _on_meditate_button_pressed() -> void:
-	var buttonarray : Array = [livebutton, socializebutton, worshipbutton, exercisebutton, workbutton, studybutton, meditatebutton]
-	for button in buttonarray:
+	var button_array : Array = [livebutton, socializebutton, worshipbutton, exercisebutton, workbutton, studybutton, meditatebutton]
+	for button in button_array:
 		button.disabled = false
 	meditatebutton.disabled = true
 	begin_activity()

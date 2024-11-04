@@ -85,3 +85,15 @@ func reputation() -> float:
 
 func karma() -> float:
 	return Game.ref.data.karma
+
+func fitness() -> float:
+	return Game.ref.data.fitness
+
+func wealth() -> float:
+	return Game.ref.data.wealth
+
+func education() -> float:
+	return Game.ref.data.education
+
+func wisdom() -> float:
+	return Game.ref.data.wisdom
