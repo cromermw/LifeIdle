@@ -217,7 +217,6 @@ theme_type_variation = &"HeaderMedium"
 text = "Titles"
 
 [node name="AcolyteTitle" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" node_paths=PackedStringArray("AcolyteActivateButton")]
-visible = false
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_vertical = 2
@@ -274,7 +273,6 @@ text = "Activate
 layout_mode = 2
 
 [node name="RecruitTitle" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_vertical = 2
@@ -328,7 +326,6 @@ text = "Activate"
 layout_mode = 2
 
 [node name="VendorTitle" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_vertical = 2
@@ -382,7 +379,6 @@ text = "Activate"
 layout_mode = 2
 
 [node name="DocentTitle" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_vertical = 2
@@ -436,7 +432,6 @@ text = "Activate"
 layout_mode = 2
 
 [node name="PostulantTitle" type="Control" parent="TitlesView/HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_vertical = 2

@@ -13,6 +13,9 @@ extends Control
 ## when this timer ends, the player gains some attributes depending on their activity
 @export var activitytimer : Timer
 
+func _ready() -> void:
+	visible = true
+
 ## starts the timer if the timer is stopped	
 func begin_activity() -> void:
 	activitytimer.wait_time = 1
@@ -20,7 +23,7 @@ func begin_activity() -> void:
 		activitytimer.start()
 
 ## rewards random attributes for player activities that don't increase a specific attribute
-func reward_random(number_of_rewards, reward_multiplier) -> void:
+func reward_random(number_of_rewards, _reward_multiplier) -> void:
 	var reward : int
 	
 	for iteration in number_of_rewards:	
@@ -32,7 +35,7 @@ func live() -> void:
 	reward_random(2, 1)
 
 func perform_activity(activity) -> void:
-	HandlerResources.ref.create_attribute(activity, 3)
+	HandlerResources.ref.create_attribute(activity, 20)
 
 ## determine which activity the player is performing by checking to see which button is disabled
 func get_activity_button() -> Button:
